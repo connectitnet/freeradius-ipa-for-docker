@@ -2,7 +2,7 @@ FROM connectitnet/freeipa-client-for-docker:latest
 
 LABEL maintainer="JSenecal@connectitnet.com"
 
-RUN install_clean freeradius-ldap
+RUN install_clean freeradius-ldap net-tools
 
 ADD /src /
 RUN chmod +x /etc/service/*/run
