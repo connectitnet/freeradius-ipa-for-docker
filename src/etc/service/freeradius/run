@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /usr/sbin/freeradius -f $FREERADIUS_OPTS
