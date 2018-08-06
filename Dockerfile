@@ -8,8 +8,7 @@ RUN apt-add-repository ppa:freeradius/stable-3.0 --yes\
 ADD https://github.com/kelseyhightower/confd/releases/download/v0.16.0/confd-0.16.0-linux-amd64 /usr/local/bin/confd
 RUN chmod +x /usr/local/bin/confd
 
-RUN rm /etc/freeradius/sites-enabled/{'default','inner-tunnel'}
-RUN rm /etc/freeradius/mods-enabled/{'ldap','eap'}
+RUN bash -c "rm /etc/freeradius/sites-enabled/{'default','inner-tunnel'}"
 
 ADD /src /
 RUN chmod +x /etc/service/*/run
