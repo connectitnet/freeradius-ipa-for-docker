@@ -2,6 +2,7 @@
 src = "ldap.tmpl"
 dest = "/etc/freeradius/mods-enabled/ldap"
 keys = [
+    "/ipa/domain",
     "/ldap/identity",
     "/ldap/password",
     "/ldap/base-dn",
