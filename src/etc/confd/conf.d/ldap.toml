@@ -1,0 +1,10 @@
+[template]
+src = "ldap.tmpl"
+dest = "/etc/freeradius/mods-enabled/ldap"
+keys = [
+    "/ldap/servers",
+    "/ldap/identity",
+    "/ldap/password",
+    "/ldap/base_dn",
+    ]
+check_cmd = "freeradius -C"

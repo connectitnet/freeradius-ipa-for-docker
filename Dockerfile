@@ -9,7 +9,7 @@ ADD https://github.com/kelseyhightower/confd/releases/download/v0.16.0/confd-0.1
 RUN chmod +x /usr/local/bin/confd
 
 RUN rm /etc/freeradius/sites-enabled/{'default','inner-tunnel'}
-RUN rm /etc/freeradius/mods-enabled/{'ldap',}
+RUN rm /etc/freeradius/mods-enabled/{'ldap','eap'}
 
 ADD /src /
 RUN chmod +x /etc/service/*/run
