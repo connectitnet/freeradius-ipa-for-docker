@@ -1,2 +1,4 @@
 #!/bin/sh
+export KRB5_CLIENT_KTNAME=/etc/freeradius/radius.keytab 
+/usr/bin/kdestroy -A
 exec /usr/sbin/freeradius -f $FREERADIUS_OPTS

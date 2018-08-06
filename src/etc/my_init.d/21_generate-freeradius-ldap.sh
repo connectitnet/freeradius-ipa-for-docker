@@ -23,4 +23,12 @@ file_env() {
 	unset "$fileVar"
 }
 
+hostname=$(hostname -f)
+
+# create keytab for radius user
+kinit -t /etc/krb5.keytab
+ipa-getkeytab -p "radius/$hostname" -k /etc/freeradius/radius.keytab
+chown root:freerad /etc/freeradius/radius.keytab
+chmod 640 /etc/freeradius/radius.keytab
+
 confd -onetime -backend env
