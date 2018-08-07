@@ -9,6 +9,7 @@ ADD https://github.com/kelseyhightower/confd/releases/download/v0.16.0/confd-0.1
 RUN chmod +x /usr/local/bin/confd
 
 RUN rm /etc/freeradius/mods-enabled/eap
+RUN ln -s /etc/freeradius/sites-available/status /etc/freeradius/sites-enabled/
 
 ADD /src /
 RUN chmod +x /etc/service/*/run
@@ -20,3 +21,4 @@ VOLUME ["/etc/freeradius"]
 
 EXPOSE 1812 1813
 EXPOSE 1812/udp 1813/udp
+EXPOSE 18121/udp
